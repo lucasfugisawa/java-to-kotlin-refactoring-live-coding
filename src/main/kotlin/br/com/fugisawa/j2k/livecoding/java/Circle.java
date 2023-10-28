@@ -19,6 +19,10 @@ public class Circle {
     public Point getCenter() { return center; }
     public int getRadius() { return radius; }
 
+    public boolean contains(Point point) {
+        return center.distanceTo(point) <= radius;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
