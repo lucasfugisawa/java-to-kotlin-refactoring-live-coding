@@ -1,4 +1,4 @@
-package br.com.fugisawa.j2k.livecoding.java;
+package com.fugisawa.j2k.livecoding.java;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package br.com.fugisawa.j2k.livecoding.java;
+package com.fugisawa.j2k.livecoding.java;
 
 public class Point {
     private final int x;
