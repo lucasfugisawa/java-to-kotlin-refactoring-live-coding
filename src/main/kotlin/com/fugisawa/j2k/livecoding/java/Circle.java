@@ -1,6 +1,8 @@
 package com.fugisawa.j2k.livecoding.java;
 
+import java.util.Collection;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Circle {
     private final Point center;
@@ -21,6 +23,22 @@ public class Circle {
 
     public boolean contains(Point point) {
         return center.distanceTo(point) <= radius;
+    }
+
+    public Collection<Point> inscribedPoints(Collection<Point> points) {
+        return points.stream()
+                .filter(this::contains)
+                .collect(Collectors.toSet());
+    }
+
+    public long numberOfInscribedPoints(Collection<Point> points) {
+        return inscribedPoints(points).size();
+    }
+
+    public Point aRandomInscribedPoint(Collection<Point> points) {
+        return inscribedPoints(points).stream()
+                .findAny()
+                .orElse(null);
     }
 
     @Override
